@@ -46,5 +46,5 @@ end
 Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
   
-  expect(page).to have_xpath("//tr", count: 11)
+  expect(page).to have_xpath("//tr", count: 11)         #11 as +1 for header
 end

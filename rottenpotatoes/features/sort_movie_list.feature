@@ -25,13 +25,13 @@ Background: movies have been added to database
 Scenario: sort movies alphabetically
   When I follow "Movie Title"
   # your steps here
-  Then I should see "Aladdin" before "Amelie"
+  Then I should be on the RottenPotatoes home page
+  And I should see "Aladdin" before "Amelie"
   And I should see "2001: A Space Odyssey" before "Chicken Run"
 
 Scenario: sort movies in increasing order of release date
   When I follow "Release Date"
   # your steps here
-  Then I should see "2001: A Space Odyssey" before "Aladdin"
+  Then I should be on the RottenPotatoes home page
+  And I should see "2001: A Space Odyssey" before "Aladdin"
   And I should see "The Incredibles" before "The Help"
-  # Then I should see "6-Apr-1968" before "25-Nov-1992"
-  # And I should see "5-Nov-2004" befire "10-Aug-2011"

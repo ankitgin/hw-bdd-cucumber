@@ -30,8 +30,9 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step to "submit" the search form on the homepage
   And I press "Refresh"
   
+  Then I should be on the RottenPotatoes home page
   # enter step(s) to ensure that PG and R movies are visible
-  Then I should see "Amelie"
+  And I should see "Amelie"
   And I should see "Raiders of the Lost Ark"
   And I should see "The Incredibles"
   And I should see "The Terminator"
@@ -50,4 +51,6 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
 Scenario: all ratings selected
   # see assignment
   When I check the following ratings: "PG R PG-13 G NC-17"
-  Then I should see all the movies
+  And I press "Refresh"
+  Then I should be on the RottenPotatoes home page
+  And I should see all the movies
