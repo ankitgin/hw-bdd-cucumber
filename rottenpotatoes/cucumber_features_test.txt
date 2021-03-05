@@ -20,33 +20,33 @@ Feature: display list of movies filtered by MPAA rating
     And I am on the RottenPotatoes home page     # features/step_definitions/web_steps.rb:44
     Then 10 seed movies should exist             # features/step_definitions/movie_steps.rb:13
 
-  Scenario: restrict to movies with 'PG' or 'R' ratings  # features/filter_movie_list.feature:25
+  Scenario: restrict to movies with 'PG' or 'R' ratings # features/filter_movie_list.feature:25
     # enter step(s) to check the 'PG' and 'R' checkboxes
-    When I check the following ratings: "PG R"           # features/step_definitions/movie_steps.rb:30
+    When I check the following ratings: "PG R"          # features/step_definitions/movie_steps.rb:30
     # enter step(s) to uncheck all other checkboxes
-    And I uncheck the following ratings: "PG-13 G NC-17" # features/step_definitions/movie_steps.rb:30
+    And I uncheck the following ratings: "PG-13 G"      # features/step_definitions/movie_steps.rb:30
     # enter step to "submit" the search form on the homepage
-    And I press "Refresh"                                # features/step_definitions/web_steps.rb:52
-    Then I should be on the RottenPotatoes home page     # features/step_definitions/web_steps.rb:230
+    And I press "Refresh"                               # features/step_definitions/web_steps.rb:52
+    Then I should be on the RottenPotatoes home page    # features/step_definitions/web_steps.rb:230
     # enter step(s) to ensure that PG and R movies are visible
-    And I should see "Amelie"                            # features/step_definitions/web_steps.rb:105
-    And I should see "Raiders of the Lost Ark"           # features/step_definitions/web_steps.rb:105
-    And I should see "The Incredibles"                   # features/step_definitions/web_steps.rb:105
-    And I should see "The Terminator"                    # features/step_definitions/web_steps.rb:105
-    And I should see "When Harry Met Sally"              # features/step_definitions/web_steps.rb:105
+    And I should see "Amelie"                           # features/step_definitions/web_steps.rb:105
+    And I should see "Raiders of the Lost Ark"          # features/step_definitions/web_steps.rb:105
+    And I should see "The Incredibles"                  # features/step_definitions/web_steps.rb:105
+    And I should see "The Terminator"                   # features/step_definitions/web_steps.rb:105
+    And I should see "When Harry Met Sally"             # features/step_definitions/web_steps.rb:105
     # enter step(s) to ensure that other movies are not visible
-    And I should not see "The Help"                      # features/step_definitions/web_steps.rb:123
-    And I should not see "Chocolat"                      # features/step_definitions/web_steps.rb:123
-    And I should not see "Aladdin"                       # features/step_definitions/web_steps.rb:123
-    And I should not see "2001: A Space Odyssey"         # features/step_definitions/web_steps.rb:123
-    And I should not see "Chicken Run"                   # features/step_definitions/web_steps.rb:123
+    And I should not see "The Help"                     # features/step_definitions/web_steps.rb:123
+    And I should not see "Chocolat"                     # features/step_definitions/web_steps.rb:123
+    And I should not see "Aladdin"                      # features/step_definitions/web_steps.rb:123
+    And I should not see "2001: A Space Odyssey"        # features/step_definitions/web_steps.rb:123
+    And I should not see "Chicken Run"                  # features/step_definitions/web_steps.rb:123
 
-  Scenario: all ratings selected                             # features/filter_movie_list.feature:51
+  Scenario: all ratings selected                       # features/filter_movie_list.feature:51
     # see assignment
-    When I check the following ratings: "PG R PG-13 G NC-17" # features/step_definitions/movie_steps.rb:30
-    And I press "Refresh"                                    # features/step_definitions/web_steps.rb:52
-    Then I should be on the RottenPotatoes home page         # features/step_definitions/web_steps.rb:230
-    And I should see all the movies                          # features/step_definitions/movie_steps.rb:46
+    When I check the following ratings: "PG R PG-13 G" # features/step_definitions/movie_steps.rb:30
+    And I press "Refresh"                              # features/step_definitions/web_steps.rb:52
+    Then I should be on the RottenPotatoes home page   # features/step_definitions/web_steps.rb:230
+    And I should see all the movies                    # features/step_definitions/movie_steps.rb:46
 
 Feature: display list of movies sorted by different criteria
   As an avid moviegoer
@@ -83,4 +83,4 @@ Feature: display list of movies sorted by different criteria
 
 4 scenarios (4 passed)
 38 steps (38 passed)
-0m0.733s
+0m0.667s

@@ -26,7 +26,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to check the 'PG' and 'R' checkboxes
   When I check the following ratings: "PG R"
   # enter step(s) to uncheck all other checkboxes
-  And I uncheck the following ratings: "PG-13 G NC-17"
+  And I uncheck the following ratings: "PG-13 G"
   # enter step to "submit" the search form on the homepage
   And I press "Refresh"
   
@@ -50,7 +50,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
 
 Scenario: all ratings selected
   # see assignment
-  When I check the following ratings: "PG R PG-13 G NC-17"
+  When I check the following ratings: "PG R PG-13 G"
   And I press "Refresh"
   Then I should be on the RottenPotatoes home page
   And I should see all the movies
